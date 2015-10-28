@@ -1,0 +1,284 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"stat",
+				"statustext"
+			],
+			[
+				"s",
+				"status"
+			],
+			[
+				"ke",
+				"keyCode"
+			],
+			[
+				"paddle",
+				"paddles"
+			],
+			[
+				"par",
+				"particles"
+			],
+			[
+				"ti",
+				"time"
+			],
+			[
+				"ra",
+				"random"
+			],
+			[
+				"op",
+				"optionText"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"in",
+				"indexOf"
+			],
+			[
+				"cl",
+				"clearStack"
+			],
+			[
+				"que",
+				"questionStack"
+			],
+			[
+				"ques",
+				"question"
+			],
+			[
+				"con",
+				"conditions"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"remo",
+				"removeItem"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"get",
+				"getItem"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Uusi tekstiasiakirja.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/code/RFID/monitor/users.json",
+		"/C/code/RFID/monitor/server.js",
+		"/C/code/RFID/monitor/index.html",
+		"/C/code/RFID/data.csv",
+		"/C/code/RFID/.gitignore",
+		"/C/code/RFID/monitor/monitor.html",
+		"/C/code/RFID/Kiinasofta/test_db",
+		"/C/code/RFID/firmware/desktop.ini",
+		"/C/Users/Antti/Google Drive/Aalto/Suojatieturva_ SCI-projektikurssi/Appi/granis.json",
+		"/C/Users/Antti/Downloads/VIP lista - Sheet1.csv",
+		"/C/Users/Antti/Downloads/35a632b1-db22-4c7a-aabb-b54113c99501/dr_suojatie_0/dr_suojatie.dbf",
+		"/C/Users/Antti/Desktop/granis.json",
+		"/C/Users/Antti/Downloads/CSE-C3200_answer_template_R3",
+		"/C/Users/Antti/Downloads/35a632b1-db22-4c7a-aabb-b54113c99501/dr_suojatie_0/dr_suojatie.shx",
+		"/C/Users/Antti/Downloads/35a632b1-db22-4c7a-aabb-b54113c99501/dr_suojatie_0/dr_suojatie.shp",
+		"/C/Users/Antti/Downloads/35a632b1-db22-4c7a-aabb-b54113c99501/dr_suojatie_0/dr_suojatie.prj",
+		"/C/Users/Antti/Downloads/35a632b1-db22-4c7a-aabb-b54113c99501/dr_suojatie_0/dr_suojatie.cst",
+		"/C/code/pingpong/index.html",
+		"/C/code/pingpong/README.md",
+		"/C/code/pingpong/main.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/views/createSurvey/createSurvey.html",
+		"/C/code/softaprojekti/survey-app-server/client/app/components/resources/surveyResources.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/app.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/views/editSurvey/EditSurveyCtrl.spec.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/AppCtrl.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/app.less",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/app.html",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/views/editSurvey/editSurvey.html",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/views/editSurvey/EditSurveyCtrl.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/views/createSurvey/CreateSurveyCtrl.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/components/datepicker/DatepickerCtrl.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/components/security/security.spec.js",
+		"/C/code/softaprojekti/survey-app-server/client/index.html",
+		"/C/code/355072/round2/README.md",
+		"/C/code/355072/round2/server.c",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/content/createNew.html",
+		"/C/code/softaprojekti/survey-app-server/client/app/components/datepicker/DatepickerCtrl.spec.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/AppCtrl.spec.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/views/createSurvey/CreateSurveyCtrl.spec.js",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/modal.html",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/menu.html",
+		"/C/code/softaprojekti/survey-app-server/client/app/home/newSurveyModal.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"multipl",
+			"m",
+			"par.vx"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Uusi tekstiasiakirja.txt",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 262.0,
+	"status_bar_visible": true
+}
