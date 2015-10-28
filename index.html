@@ -1,8 +1,10 @@
 <html>
+<head>
+	<script type="text/javascript" src="lib/jquery-1.11.3.min.js"></script>
+</head>
 <body>
 	<div id="gps"></div>
 	<script type="text/javascript">
-	var divi = document.getElementById("gps");
 		function getGPS(){
 			if(navigator.geolocation){
 				var options = {timeout:60000, enableHighAccuracy:true};
@@ -12,7 +14,7 @@
 			}
 		}
 		function showPos(location){
-			divi.innerHTML = "Location:" + location.coords.latitude + "," +location.coords.longitude;
+			$("#gps").text("Location:" + location.coords.latitude + "," +location.coords.longitude);
 		}
 
 		function errorHandler(err) {
