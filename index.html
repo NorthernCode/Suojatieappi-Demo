@@ -4,11 +4,12 @@
 </head>
 <body>
 	<div id="gps"></div>
+	<div id="data"></div>
 	<script type="text/javascript">
 		function getGPS(){
 			if(navigator.geolocation){
 				var options = {timeout:60000, enableHighAccuracy:true};
-               watchID = navigator.geolocation.watchPosition(showPos, errorHandler, options);
+                navigator.geolocation.watchPosition(showPos, errorHandler, options);
 			}else{
 				alert("no gps");
 			}
@@ -26,7 +27,25 @@
                alert("Error: Position is unavailable!");
             }
          }
+
+         function showData(data){
+         	$( "#data" ).text( data.elements[0].lat );
+         }
+
+         function getData(){
+			$.ajax({
+			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22](60.18,24.83,60.19,24.84);%20out%3B",
+			     dataType: 'json',
+			     success:function(json){
+			         	showData(json);
+			        },
+			     error:function(){
+			         alert("Error");
+			     }      
+			});
+         }
 		getGPS();
+		getData();
 	</script>
 </body>
 </html>
