@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getData"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
 				"stat",
 				"statustext"
 			],
@@ -70,20 +78,24 @@
 			[
 				"time",
 				"timestamp"
-			],
-			[
-				"get",
-				"getItem"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "Uusi tekstiasiakirja.txt",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1327,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/code/graffa/round2/src/basis/Subdiv.cpp",
+			"settings":
+			{
+				"buffer_size": 8458,
 				"line_ending": "Windows"
 			}
 		}
@@ -112,6 +124,7 @@
 	},
 	"file_history":
 	[
+		"/C/code/suojatie-app/Uusi tekstiasiakirja.txt",
 		"/C/code/RFID/monitor/users.json",
 		"/C/code/RFID/monitor/server.js",
 		"/C/code/RFID/monitor/index.html",
@@ -191,15 +204,41 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Uusi tekstiasiakirja.txt",
+					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								777,
+								777
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/code/graffa/round2/src/basis/Subdiv.cpp",
+					"settings":
+					{
+						"buffer_size": 8458,
 						"regions":
 						{
 						},
@@ -212,7 +251,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -229,7 +269,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 29.0
 	},
 	"layout":
 	{
