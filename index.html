@@ -5,6 +5,7 @@
 <body>
 	<div id="gps"></div>
 	<div id="data"></div>
+	<div id="acc"></div>
 	<script type="text/javascript">
 		function getGPS(){
 			if(navigator.geolocation){
@@ -26,13 +27,13 @@
             else if( err.code == 2) {
                alert("Error: Position is unavailable!");
             }
-         }
+        }
 
-         function showData(data){
+        function showData(data){
          	$( "#data" ).text( data.elements[0].lat );
-         }
+        }
 
-         function getData(){
+        function getData(){
 			$.ajax({
 			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22](60.18,24.83,60.19,24.84);%20out%3B",
 			     dataType: 'json',
@@ -43,7 +44,20 @@
 			         alert("Error");
 			     }      
 			});
-         }
+        }
+
+        function getAcc(event){
+        	var acc = event.acceleration;
+			$("#gps").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1));
+        }
+
+        if (window.DeviceMotionEvent) {
+		  window.addEventListener('devicemotion', getAcc, false);
+		} else {
+		  $("#acc").text('HTML5 Acceleration not supperted.');
+		}
+
+
 		getGPS();
 		getData();
 	</script>
