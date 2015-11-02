@@ -1,6 +1,7 @@
 <html>
 <head>
 	<script type="text/javascript" src="lib/jquery-1.11.3.min.js"></script>
+	<title>Suojatie - Demo</title>
 </head>
 <body>
 	<div id="gps"></div>
@@ -48,7 +49,7 @@
 
         function getAcc(event){
         	var acc = event.acceleration;
-			$("#gps").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1));
+			$("#acc").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1));
         }
 
         if (window.DeviceMotionEvent) {
