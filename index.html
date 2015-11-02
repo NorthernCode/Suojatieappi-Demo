@@ -66,9 +66,9 @@
 		setInterval(function(){
 			var latestEvents = gpsEvents.slice();
 			var sum = [];
-			var sum.x = 0.0;
-			var sum.y = 0.0;
-			var sum.z = 0.0;
+			sum.x = 0.0;
+			sum.y = 0.0;
+			sum.z = 0.0;
 			$("#rate").text("Rate: " + latestEvents.length);
 			for(var i=0; i < latestEvents.length; i++){
 				sum.x += latestEvents[i].x;
