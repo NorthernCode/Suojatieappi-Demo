@@ -9,7 +9,7 @@
 	<div id="acc"></div>
 	<div id="rate"></div>
 	<script type="text/javascript">
-		var gpsEvents = [];
+		var gpsEvents = 0;
 
 		function getGPS(){
 			if(navigator.geolocation){
@@ -53,7 +53,7 @@
         function getAcc(event){
         	var acc = event.acceleration;
 			$("#acc").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1) + " at rate: " + event.interval );
-			gpsEvents.prepend(acc);
+			gpsEvents += 1;
         }
 
         if (window.DeviceMotionEvent) {
@@ -64,7 +64,7 @@
 
 		setInterval(function(){
 			$("#rate").text(gpsEvents.length);
-			gpsEvents = [];
+			gpsEvents = 2;
 		}, 2000);
 		getGPS();
 		getData();
