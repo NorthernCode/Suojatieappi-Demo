@@ -52,8 +52,8 @@
 
         function getAcc(event){
         	var acc = event.acceleration;
+        	gpsEvents = gpsEvents + 1;
 			$("#acc").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1) + " at rate: " + event.interval );
-			gpsEvents += 1;
         }
 
         if (window.DeviceMotionEvent) {
