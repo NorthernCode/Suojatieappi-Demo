@@ -8,8 +8,9 @@
 	<div id="data"></div>
 	<div id="acc"></div>
 	<div id="rate"></div>
+	<div id="sum"></div>
 	<script type="text/javascript">
-		var gpsEvents = 0;
+		var gpsEvents = [];
 
 		function getGPS(){
 			if(navigator.geolocation){
@@ -52,8 +53,8 @@
 
         function getAcc(event){
         	var acc = event.acceleration;
-        	gpsEvents = gpsEvents + 1;
-			$("#acc").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1) + " at rate: " + event.interval );
+        	gpsEvents.push(acc);
+			$("#acc").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1));
         }
 
         if (window.DeviceMotionEvent) {
@@ -63,8 +64,16 @@
 		}
 
 		setInterval(function(){
-			$("#rate").text(gpsEvents);
-			gpsEvents = 2;
+			var latestEvents = gpsEvents.slice();
+			var sum = [];
+			$("#rate").text("Rate: "latestEvents.length);
+			for(var i=0; i < latestEvents.length; i++){
+				sum.x += latestEvents[i].x;
+				sum.y += latestEvents[i].y;
+				sum.z += latestEvents[i].z;
+			}
+			$("#sum").text("&#931; X: " + acc.x);
+			gpsEvents = [];
 		}, 2000);
 		getGPS();
 		getData();
