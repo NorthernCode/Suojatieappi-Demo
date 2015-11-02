@@ -62,10 +62,10 @@
 		  $("#acc").text('HTML5 Acceleration not supperted.');
 		}
 
-		setInterval(2000, function(){
+		setInterval(function(){
 			$("#rate").text(gpsEvents.length);
 			gpsEvents = [];
-		});
+		}, 2000);
 		getGPS();
 		getData();
 	</script>
