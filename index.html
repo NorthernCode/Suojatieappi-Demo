@@ -7,7 +7,10 @@
 	<div id="gps"></div>
 	<div id="data"></div>
 	<div id="acc"></div>
+	<div id="rate"></div>
 	<script type="text/javascript">
+		var gpsEvents = []
+
 		function getGPS(){
 			if(navigator.geolocation){
 				var options = {timeout:60000, enableHighAccuracy:true};
@@ -49,8 +52,8 @@
 
         function getAcc(event){
         	var acc = event.acceleration;
-			$("#acc").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1) + "at rate:" + event.interval );
-
+			$("#acc").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1) + " at rate: " + event.interval );
+			gpsEvents.prepend(acc);
         }
 
         if (window.DeviceMotionEvent) {
@@ -59,7 +62,10 @@
 		  $("#acc").text('HTML5 Acceleration not supperted.');
 		}
 
-
+		setInterval(2000, function(){
+			$("#rate").text(gpsEvents.length);
+			gpsEvents = [];
+		});
 		getGPS();
 		getData();
 	</script>
