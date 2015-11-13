@@ -36,7 +36,7 @@
         }
 
         function showData(data){
-         	$( "#data" ).text( data );
+         	$( "#data" ).text( JSON.stringify(data, null, 2) );
         }
 
         function getData(){
