@@ -52,35 +52,8 @@
 			     }      
 			});
         }
-
-        function getAcc(event){
-        	var acc = event.acceleration;
-        	gpsEvents.push(acc);
-			$("#acc").text("Acceleration: X: " + (acc.x).toFixed(1) + " Y: " + (acc.y).toFixed(1) + " Z: " + (acc.z).toFixed(1));
-        }
-
-        if (window.DeviceMotionEvent) {
-		  window.addEventListener('devicemotion', getAcc, false);
-		} else {
-		  $("#acc").text('HTML5 Acceleration not supported.');
-		}
-
-		setInterval(function(){
-			var latestEvents = gpsEvents.slice();
-			var sum = [];
-			sum.x = 0.0;
-			sum.y = 0.0;
-			sum.z = 0.0;
-			$("#rate").text("Rate: " + latestEvents.length);
-			for(var i=0; i < latestEvents.length; i++){
-				sum.x += latestEvents[i].x;
-				sum.y += latestEvents[i].y;
-				sum.z += latestEvents[i].z;
-			}
-			$("#sum").text("SUM X: " + sum.x + " SUM Y: " + sum.y + " SUM Z: " + sum.z);
-			gpsEvents = [];
-		}, 2000);
-		getGPS();
+        
+	getGPS();
 	</script>
 	<script type="text/javascript" src="script.js"></script>
 </body>
