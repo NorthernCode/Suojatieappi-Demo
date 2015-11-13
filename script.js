@@ -21,9 +21,9 @@ function checkTiles(gps) {
   var y = Math.floor(posy*d);
   for (i = x-1; i < x+1; i++) { 
     for (j = y-1; i < y+1; j++) {
-      if !(tiles[j][i]) {
+      if (!(tiles[j][i])) {
         // ladataan isosta ruudusta dataa
-        if !loadSquares(i/(D),j/(D)) {
+        if (!loadSquares(i/(D),j/(D))) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
           return -1;
         }
@@ -62,10 +62,10 @@ function sortTiles(json) {
 	for (i = 0; i<json.length; i++) {
 		x = Math.floor(json[i].lon/d);
 		y = Math.floor(json[i].lat/d);
-		if !tiles[x] {
+		if (!tiles[x]) {
 			tiles[x] = {};
 		}
-		if !tiles[x][y] {
+		if (!tiles[x][y]) {
 			tiles[x][y] = {};
 		}
 		tiles[x][y].push({"x":json[i].lon,"y":json[i].lat});	
