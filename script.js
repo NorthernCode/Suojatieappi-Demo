@@ -79,11 +79,11 @@ function sortTiles(json) {
 	for (i = 0; i<json.length; i++) {
 		x = Math.floor(json[i].lon/d);
 		y = Math.floor(json[i].lat/d);
-		if (!tiles[x]) {
-			tiles[x] = {};
+		if (!tiles[y]) {
+			tiles[y] = {};
 		}
-		if (!tiles[x][y]) {
-			tiles[x][y] = {};
+		if (!tiles[y][x]) {
+			tiles[y][x] = {};
 		}
 		tiles[x][y].push({"x":json[i].lon,"y":json[i].lat});	
 	}
