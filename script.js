@@ -24,13 +24,13 @@ function checkTiles(gps) {
     for (j = y-1; i < y+1; j++) {
       if (!(tiles[j])) {
         // ladataan isosta ruudusta dataa
-        if (!loadSquares(i/(D),j/(D))) {
+        if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
           return -1;
         }
       }
       else if (!(tiles[j][i])) {
-      	if (!loadSquares(i/(D),j/(D))) {
+      	if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
           return -1;
         }
@@ -38,6 +38,7 @@ function checkTiles(gps) {
       // pikkuruudun data on alustettu
       // apumuuttuja tekstille
       var t;
+      // testataan vielä, onko tyhjä vai onko lista
       for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
           alert("OLET SUOJATIELLÄ");
@@ -50,9 +51,10 @@ function checkTiles(gps) {
 }
 
 function loadSquares(x,y) {
-  
+  var x2 = x+0.1;
+  var y2 = y+0.1;
   $.ajax({
-			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+x+","+y+","+x+0.1+","+y+0.1+");%20out%3B",
+			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+x+","+y+","+x2+","+y2+");%20out%3B",
 			     dataType: 'json',
 			     success:function(json){
 			         	sortTiles(json.elements);
