@@ -24,12 +24,14 @@ function checkTiles(gps) {
     for (j = y-1; i < y+1; j++) {
       if (!(tiles[j])) {
         // ladataan isosta ruudusta dataa
+        alert("mentiin loadailee");
         if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
           return -1;
         }
       }
       else if (!(tiles[j][i])) {
+      	alert("mentiin loadailee 2");
       	if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
           return -1;
