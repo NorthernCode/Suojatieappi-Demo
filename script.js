@@ -51,8 +51,8 @@ function checkTiles(gps) {
 }
 
 function loadSquares(x,y) {
-  x = Math.floor(x*D);
-  y = Math.floor(y*D);
+  x = Math.floor(x*D)/D;
+  y = Math.floor(y*D)/D;
   var x2 = x+0.1;
   var y2 = y+0.1;
   alert("x:"+x+"   y:"+y);
