@@ -10,7 +10,7 @@
 	<div id="sandbox" style="border:solid;"></div>
 	<script type="text/javascript">
 		var gpsEvents = [];
-
+		var gps;
 		function getGPS(){
 			if(navigator.geolocation){
 				var options = {timeout:60000, enableHighAccuracy:true};
@@ -20,7 +20,9 @@
 			}
 		}
 		function showPos(location){
+			gps = location;
 			$("#gps").text("Location:" + location.coords.latitude.toFixed(2) + "," +location.coords.longitude.toFixed(2));
+			getData();
 		}
 
 		function errorHandler(err) {
@@ -38,8 +40,9 @@
         }
 
         function getData(){
+        	var gpsString = "" + gps.coords.latitude.toFixed(2) + "," + gps.coords.longitude.toFixed(2) + "," + (gps.coords.latitude + 0.01).toFixed(2) + "," + (gps.coords.longitude + 0.01).toFixed(2)
 			$.ajax({
-			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22](60.18,24.83,60.19,24.84);%20out%3B",
+			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+ gpsString + ");%20out%3B",
 			     dataType: 'json',
 			     success:function(json){
 			         	showData(json);
@@ -78,7 +81,6 @@
 			gpsEvents = [];
 		}, 2000);
 		getGPS();
-		getData();
 	</script>
 	<script type="text/javascript" src="script.js"></script>
 </body>
