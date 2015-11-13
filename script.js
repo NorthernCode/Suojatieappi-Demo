@@ -22,7 +22,6 @@ function checkTiles(gps) {
   var y = Math.floor(posy*d);
   for (i = x-1; i < x+1; i++) { 
     for (j = y-1; i < y+1; j++) {
-    	alert("checktiles loop: x: "+i+"  y:"+j);
       if (!(tiles[j])) {
         // ladataan isosta ruudusta dataa
         if (!loadSquares(i/d,j/d)) {
@@ -40,7 +39,6 @@ function checkTiles(gps) {
       // apumuuttuja tekstille
       var t;
       // testataan vielä, onko tyhjä vai onko lista
-      alert("i="+i+" j="+j);
       alert("listan tila:"+tiles[j])
       for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
@@ -60,13 +58,13 @@ function loadSquares(x,y) {
   alert("x:"+x+"    y:"+y);
   xd = x*10;
   yd = y*10;
-  for (j=yd; j<yd+9; j++) {
-  	for (i=xd; i<xd+9; i++) {
-  		if (!(tiles[j])) {
-  			tiles[j] = {};
+  for (jj=yd; jj<yd+9; jj++) {
+  	for (ii=xd; ii<xd+9; ii++) {
+  		if (!(tiles[jj])) {
+  			tiles[jj] = {};
   		}
-  		if (!(tiles[j][i])) {
-  			tiles[j][i] = {};
+  		if (!(tiles[jj][ii])) {
+  			tiles[jj][ii] = {};
   		}
   	}
   }
@@ -94,10 +92,10 @@ function sortTiles(json) {
 	// convert crosswalk coordinates to indexes
 	var x;
 	var y;
-	for (i = 0; i<json.length; i++) {
-		x = Math.floor(json[i].lon/d);
-		y = Math.floor(json[i].lat/d);
-		tiles[y][x].push({"x":json[i].lon,"y":json[i].lat});	
+	for (iii = 0; iii<json.length; iii++) {
+		x = Math.floor(json[iii].lon/d);
+		y = Math.floor(json[iii].lat/d);
+		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});	
 	}
 	
 	
