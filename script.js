@@ -69,7 +69,7 @@ function loadSquares(x,y) {
   		}
   	}
   }
-  alert("example test: "+tiles[j]+"   another: "+tiles[j+4]);
+  alert("example test at indexs j="+j"+: "+tiles[j]+"   another at index j="j+4"+: "+tiles[j+4]);
   x = x/D;
   y = y/D;
   var x2 = x+0.1;
