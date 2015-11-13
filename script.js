@@ -68,6 +68,7 @@ function loadSquares(x,y) {
   		if (!(tiles[j][i])) {
   			tiles[j][i] = {};
   		}
+  		alert("x:"+i+"   y:"+j+"tila: "+tiles[j][i]);
   	}
   }
   x = x/D;
