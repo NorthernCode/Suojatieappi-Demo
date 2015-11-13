@@ -14,7 +14,7 @@ var d = 1000;
 var D = 100;
 
 // kynnysetäisyys
-var THRESHOLD = 10;
+var THRESHOLD = 100;
 
 function checkTiles(posx,posy) {
   var x = Math.floor(posx*d);
@@ -44,7 +44,7 @@ function loadSquares(x,y) {
 			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+x+","+y+","+x+0.1+","+y+0.1+");%20out%3B",
 			     dataType: 'json',
 			     success:function(json){
-			         	sortTiles(json);
+			         	sortTiles(json.elements);
 			        },
 			     error:function(){
 			         alert("Error");
@@ -57,13 +57,21 @@ function loadSquares(x,y) {
 function sortTiles(json) {
 	// iterate over json objects
 	// convert crosswalk coordinates to indexes
-	if !tiles[x][y] {
-		tiles[x][y] = {};
+	var x;
+	var y;
+	for (i = 0; i<json.length; i++) {
+		x = Math.floor(json[i].lon/d);
+		y = Math.floor(json[i].lat/d);
+		if !tiles[x][y] {
+			tiles[x][y] = {};
+		}
+		tiles[x][y].push({"x":json[i].lon,"y":json[i].lat});	
 	}
-	tiles[x][y].push({"x":coordx,"y":coordy})
+	
   
 }
 
 function calcDistance(posx,posy,x,y) {
-  
+	var R = 6371000;
+	return ((posx-x).toRadians()*R)^2+((posy-y).toRadians()*R)^2;
 }
