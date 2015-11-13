@@ -53,8 +53,6 @@ function checkTiles(gps) {
 
 function loadSquares(x,y) {
   // initialize all tiles, some might be left uninitialized
-  
-  
   x = Math.floor(x*D);
   y = Math.floor(y*D);
   alert("x:"+x+"    y:"+y);
@@ -70,6 +68,7 @@ function loadSquares(x,y) {
   		}
   	}
   }
+  alert("example test: "+tiles[j]+"   another: "+tiles[j+4]);
   x = x/D;
   y = y/D;
   var x2 = x+0.1;
