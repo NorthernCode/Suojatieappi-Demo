@@ -46,7 +46,7 @@ function checkTiles(gps) {
         }
         t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(3)+"<br>";
       }
-      $("#sandbox").text("t")
+      $("#sandbox").text(t)
     }
   }
 }
