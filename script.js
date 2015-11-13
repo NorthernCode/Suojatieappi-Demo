@@ -51,8 +51,11 @@ function checkTiles(gps) {
 }
 
 function loadSquares(x,y) {
+  x = Math.floor(x*D);
+  y = Math.floor(y*D);
   var x2 = x+0.1;
   var y2 = y+0.1;
+  alert("x:"+x+"   y:"+y);
   $.ajax({
 			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+x+","+y+","+x2+","+y2+");%20out%3B",
 			     dataType: 'json',
