@@ -40,6 +40,7 @@ function checkTiles(gps) {
       // apumuuttuja tekstille
       var t;
       // testataan vielä, onko tyhjä vai onko lista
+      alert("i="+i+" j="+j);
       alert("listan tila:"+tiles[j])
       for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
@@ -59,8 +60,8 @@ function loadSquares(x,y) {
   alert("x:"+x+"    y:"+y);
   xd = x*10;
   yd = y*10;
-  for (j=yd; j<yd+10; j++) {
-  	for (i=xd; i<xd+10; i++) {
+  for (j=yd; j<yd+9; j++) {
+  	for (i=xd; i<xd+9; i++) {
   		if (!(tiles[j])) {
   			tiles[j] = {};
   		}
@@ -69,7 +70,6 @@ function loadSquares(x,y) {
   		}
   	}
   }
-  alert("example test at indexs j="+j+": "+tiles[j]+"   another at index j="+j+4+"+: "+tiles[j+4]);
   x = x/D;
   y = y/D;
   var x2 = x+0.1;
