@@ -5,9 +5,6 @@ alert("moi");
 
 var tiles[][] = [];
 var squares[][] = [];
-tiles[5][5] = [];
-tiles[5][5].push([62.123,23.123]);
-alert(tiles[5][5]);
 
 // pikkuruutujen skaala d, isot D, pitää olla 10^a
 var d = 1000;
@@ -15,6 +12,10 @@ var D = 100;
 
 // kynnysetäisyys
 var THRESHOLD = 100;
+
+// oma sijainti
+var posx = oma x!;
+var posy = oma y!;
 
 function checkTiles(posx,posy) {
   var x = Math.floor(posx*d);
