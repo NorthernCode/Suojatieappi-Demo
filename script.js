@@ -57,13 +57,16 @@ function loadSquares(x,y) {
   
   x = Math.floor(x*D);
   y = Math.floor(y*D);
-  for (j=y; j<y+1; j += 0.1) {
-  	for (i=x; i<x+1; i += 0.1) {
-  		if (!(tiles[j*10])) {
-  			tiles[j*10] = {};
+  alert("x:"+x+"    y:"+y);
+  xd = x*10;
+  yd = y*10;
+  for (j=yd; j<yd+10; j++) {
+  	for (i=xd; i<xd+10; i++) {
+  		if (!(tiles[j])) {
+  			tiles[j] = {};
   		}
-  		if (!(tiles[j*10][i*10])) {
-  			tiles[j*10][i*10] = {};
+  		if (!(tiles[j][i])) {
+  			tiles[j][i] = {};
   		}
   	}
   }
