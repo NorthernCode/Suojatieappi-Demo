@@ -21,7 +21,7 @@ function checkTiles(gps) {
   var y = Math.floor(posy*d);
   for (i = x-1; i < x+1; i++) { 
     for (j = y-1; i < y+1; j++) {
-      if !tiles[j][i] {
+      if !(tiles[j][i]) {
         // ladataan isosta ruudusta dataa
         if !loadSquares(i/(D),j/(D)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
