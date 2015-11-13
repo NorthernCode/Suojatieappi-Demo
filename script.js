@@ -3,8 +3,7 @@ alert("moi");
 // pikkuruutulista = tiles
 // isoruutulista = squares
 
-var tiles[][] = [];
-var squares[][] = [];
+var tiles = {};
 
 // pikkuruutujen skaala d, isot D, pitää olla 10^a
 var d = 1000;
@@ -14,10 +13,10 @@ var D = 100;
 var THRESHOLD = 100;
 
 // oma sijainti
-var posx = oma x!;
-var posy = oma y!;
 
-function checkTiles(posx,posy) {
+function checkTiles(gps) {
+  var posx = gps.coords.longitude;
+  var posy = gps.coords.latitude;
   var x = Math.floor(posx*d);
   var y = Math.floor(posy*d);
   for (i = x-1; i < x+1; i++) { 
@@ -26,7 +25,7 @@ function checkTiles(posx,posy) {
         // ladataan isosta ruudusta dataa
         if !loadSquares(i/(D),j/(D)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
-          break;
+          return -1;
         }
       }
       // pikkuruudun data on alustettu
@@ -63,6 +62,9 @@ function sortTiles(json) {
 	for (i = 0; i<json.length; i++) {
 		x = Math.floor(json[i].lon/d);
 		y = Math.floor(json[i].lat/d);
+		if !tiles[x] {
+			tiles[x] = {};
+		}
 		if !tiles[x][y] {
 			tiles[x][y] = {};
 		}
