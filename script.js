@@ -39,6 +39,7 @@ function checkTiles(gps) {
       // apumuuttuja tekstille
       var t;
       // testataan vielä, onko tyhjä vai onko lista
+      alert("listan tila:"+tiles[j])
       for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
           alert("OLET SUOJATIELLÄ");
