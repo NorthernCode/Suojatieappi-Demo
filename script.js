@@ -13,6 +13,7 @@ var D = 100;
 var THRESHOLD = 100;
 
 // oma sijainti
+var mikkeligps = {"coords":{"latitude":61.68879,"longitude":27.27311}};
 
 function checkTiles(gps) {
   var posx = gps.coords.longitude;
@@ -29,11 +30,15 @@ function checkTiles(gps) {
         }
       }
       // pikkuruudun data on alustettu
+      // apumuuttuja tekstille
+      var t;
       for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
           alert("OLET SUOJATIELLÄ");
         }
-      }  
+        t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(3)+"<br>";
+      }
+      $("#sandbox").text("t")
     }
   }
 }
@@ -78,3 +83,5 @@ function calcDistance(posx,posy,x,y) {
 	var R = 6371000;
 	return ((posx-x).toRadians()*R)^2+((posy-y).toRadians()*R)^2;
 }
+
+checkTiles(mikkeligps);
