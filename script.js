@@ -48,12 +48,19 @@ function loadSquares(x,y) {
 			        },
 			     error:function(){
 			         alert("Error");
+			         return 0;
 			     }      
 			});
   return 1;
 }
 
 function sortTiles(json) {
+	// iterate over json objects
+	// convert crosswalk coordinates to indexes
+	if !tiles[x][y] {
+		tiles[x][y] = {};
+	}
+	tiles[x][y].push({"x":coordx,"y":coordy})
   
 }
 
