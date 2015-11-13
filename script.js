@@ -20,7 +20,7 @@ function checkTiles(gps) {
   var posy = gps.coords.latitude;
   var x = Math.floor(posx*d);
   var y = Math.floor(posy*d);
-  for (j = y-1; i < y+1; j++) {
+  for (j = y-1; j < y+1; j++) {
     for (i = x-1; i < x+1; i++) {
       if (!(tiles[j])) {
         // ladataan isosta ruudusta dataa
