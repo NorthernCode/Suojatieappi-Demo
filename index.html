@@ -7,9 +7,6 @@
         <div>Turvassa yli!</div>
 	<div id="gps"></div>
 	<div id="data"></div>
-	<div id="acc"></div>
-	<div id="rate"></div>
-	<div id="sum"></div>
 	<div id="sandbox" style="border:solid;"></div>
 	<script type="text/javascript">
 		var gpsEvents = [];
@@ -23,7 +20,7 @@
 			}
 		}
 		function showPos(location){
-			$("#gps").text("Location:" + location.coords.latitude + "," +location.coords.longitude);
+			$("#gps").text("Location:" + location.coords.latitude.toFixed(2) + "," +location.coords.longitude.toFixed(2));
 		}
 
 		function errorHandler(err) {
