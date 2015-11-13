@@ -11,6 +11,7 @@
 	<script type="text/javascript">
 		var gpsEvents = [];
 		var gps;
+		var zebraData;
 		function getGPS(){
 			if(navigator.geolocation){
 				var options = {timeout:60000, enableHighAccuracy:true};
@@ -36,6 +37,7 @@
         }
 
         function showData(data){
+        	zebraData = data;
          	$( "#data" ).text( JSON.stringify(data, null, 2) );
         }
 
