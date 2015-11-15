@@ -3,7 +3,7 @@ alert("moi");
 // pikkuruutulista = tiles
 // isoruutulista = squares
 
-var tiles = {};
+var tiles = [];
 
 // pikkuruutujen skaala d, isot D, pitää olla 10^a
 var d = 1000;
@@ -61,10 +61,10 @@ function loadSquares(x,y) {
   for (jj=yd; jj<yd+9; jj++) {
   	for (ii=xd; ii<xd+9; ii++) {
   		if (!(tiles[jj])) {
-  			tiles[jj] = {};
+  			tiles[jj] = [];
   		}
   		if (!(tiles[jj][ii])) {
-  			tiles[jj][ii] = {};
+  			tiles[jj][ii] = [];
   		}
   	}
   }
