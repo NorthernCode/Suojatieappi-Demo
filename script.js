@@ -6,6 +6,7 @@ var tiles = [];
 // pikkuruutujen skaala d, isot D, pitää olla 10^a
 var d = 1000;
 var D = 100;
+var counter = 0;
 
 // kynnysetäisyys
 var THRESHOLD = 100;
@@ -13,12 +14,13 @@ var THRESHOLD = 100;
 // oma sijainti
 var testgps = {"coords":{"latitude":60.18515,"longitude":24.82585}};
 function checkTiles(gps) {
+	counter++;
   var posx = gps.coords.longitude;
   var posy = gps.coords.latitude;
   var x = Math.floor(posx*d);
   var y = Math.floor(posy*d);
   var t = "";
-  t += "SUOJATIEDATAA\n"
+  t += "SUOJATIEDATAA   "+counter+"\n";
   for (j = y-1; j <= y+1; j++) {
     for (i = x-1; i <= x+1; i++) {
       if (!(tiles[j])) {
