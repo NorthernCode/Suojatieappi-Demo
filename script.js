@@ -40,7 +40,7 @@ function checkTiles(gps) {
       // apumuuttuja tekstille
       
       // testataan vielä, onko tyhjä vai onko lista
-      alert("Suojateitä tilessä "+jj+", "+ii+": "+tiles[jj][ii]);
+      alert("Suojateitä tilessä "+j+", "+i+": "+tiles[j][i]);
       for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
           alert("OLET SUOJATIELLÄ");
@@ -96,7 +96,7 @@ function sortTiles(json) {
 		x = Math.floor(json[iii].lon*d);
 		y = Math.floor(json[iii].lat*d);
 		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});
-		alert("LIsättiin suojatie: "+y+","+x+"   "+tiles[y][x]);
+		//alert("LIsättiin suojatie: "+y+","+x+"   "+tiles[y][x]);
 	}
 	
 	
