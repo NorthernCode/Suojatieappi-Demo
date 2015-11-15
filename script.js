@@ -93,11 +93,10 @@ function sortTiles(json) {
 	// convert crosswalk coordinates to indexes
 	var x;
 	var y;
-	alert("sortTiles, this is json:"+json);
 	for (iii = 0; iii<json.length; iii++) {
 		x = Math.floor(json[iii].lon/d);
 		y = Math.floor(json[iii].lat/d);
-		alert("Uusi suojatie: x:"+json[iii].lon+" y:"+json[iii].lat);
+		alert("Tässä on uuden suojatien x ja y:"+x+"  "+y+"  ja uusi suojatie on  x: "+json[iii].lon+" y:"+json[iii].lat);
 		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});	
 	}
 	
