@@ -55,7 +55,6 @@ function loadSquares(x,y) {
   // initialize all tiles, some might be left uninitialized
   x = Math.floor(x*D);
   y = Math.floor(y*D);
-  alert("x:"+x+"    y:"+y);
   xd = x*10;
   yd = y*10;
   for (jj=yd; jj<yd+9; jj++) {
@@ -77,7 +76,6 @@ function loadSquares(x,y) {
 			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+y+","+x+","+y2+","+x2+");%20out%3B",
 			     dataType: 'json',
 			     success:function(json){
-			     	alert(JSON.stringify(json, null, 2));
 			         	sortTiles(json.elements);
 			        },
 			     error:function(){
@@ -94,8 +92,8 @@ function sortTiles(json) {
 	var x;
 	var y;
 	for (iii = 0; iii<json.length; iii++) {
-		x = Math.floor(json[iii].lon/d);
-		y = Math.floor(json[iii].lat/d);
+		x = Math.floor(json[iii].lon*d);
+		y = Math.floor(json[iii].lat*d);
 		alert("Tässä on uuden suojatien x ja y:"+x+"  "+y+"  ja uusi suojatie on  x: "+json[iii].lon+" y:"+json[iii].lat);
 		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});	
 	}
