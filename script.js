@@ -71,8 +71,8 @@ function loadSquares(x,y) {
   alert("Alustus päättynyt, indeksit: y"+jj+" x:"+ii);
   x = x/D;
   y = y/D;
-  var x2 = x+0.1;
-  var y2 = y+0.1;
+  var x2 = x+0.01;
+  var y2 = y+0.01;
   
   $.ajax({
 			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+y+","+x+","+y2+","+x2+");%20out%3B",
