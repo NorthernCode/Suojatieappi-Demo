@@ -13,8 +13,7 @@ var D = 100;
 var THRESHOLD = 100;
 
 // oma sijainti
-var testgps = {"coords":{"latitude":60.18539,"longitude":24.82695}};
-
+var testgps = {"coords":{"latitude":60.18515,"longitude":24.82585}};
 function checkTiles(gps) {
   var posx = gps.coords.longitude;
   var posy = gps.coords.latitude;
@@ -41,8 +40,8 @@ function checkTiles(gps) {
       // apumuuttuja tekstille
       
       // testataan vielä, onko tyhjä vai onko lista
-      for (k = 0; k < tiles[j][i].length; k++) {
-      	alert("paljonko suojateitä ruudussa?   "+tiles[j][i].length);
+      alert("paljonko suojateitä ruudussa"+j+","+i+"?   "+tiles[j][i].length);
+      for (k = 0; k < tiles[j][i].length-1; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
           alert("OLET SUOJATIELLÄ");
         }
@@ -59,7 +58,6 @@ function loadSquares(x,y) {
   y = Math.floor(y*D);
   xd = x*10;
   yd = y*10;
-  alert("Aloitetaan tiles alustus alkuindeksit: y:"+yd+" x:"+xd);
   for (jj=yd; jj<yd+10; jj++) {
   	for (ii=xd; ii<xd+10; ii++) {
   		if (!(tiles[jj])) {
@@ -70,7 +68,6 @@ function loadSquares(x,y) {
   		}
   	}
   }
-  alert("Alustus päättynyt, indeksit: y"+jj+" x:"+ii);
   x = x/D;
   y = y/D;
   var x2 = x+0.01;
