@@ -20,7 +20,8 @@ function checkTiles(gps) {
   var posy = gps.coords.latitude;
   var x = Math.floor(posx*d);
   var y = Math.floor(posy*d);
-  var t = "SUOJATIEDATAA:<br>";
+  var t = "";
+  t += "SUOJATIEDATAA\n"
   for (j = y-1; j < y+1; j++) {
     for (i = x-1; i < x+1; i++) {
       if (!(tiles[j])) {
@@ -45,7 +46,7 @@ function checkTiles(gps) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
           alert("OLET SUOJATIELLÄ");
         }
-        t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(3)+"<br>";
+        t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(3)+"\n";
       }
       $("#sandbox").text(t)
     }
