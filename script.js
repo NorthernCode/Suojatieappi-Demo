@@ -109,4 +109,4 @@ function calcDistance(posx,posy,x,y) {
 	return ((posx-x).toRadians()*R)^2+((posy-y).toRadians()*R)^2;
 }
 
-checkTiles(mikkeligps);
+checkTiles(testgps);
