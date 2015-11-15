@@ -58,8 +58,8 @@ function loadSquares(x,y) {
   xd = x*10;
   yd = y*10;
   alert("Aloitetaan tiles alustus alkuindeksit: y:"+yd+" x:"+xd);
-  for (jj=yd; jj<yd+9; jj++) {
-  	for (ii=xd; ii<xd+9; ii++) {
+  for (jj=yd; jj<yd+10; jj++) {
+  	for (ii=xd; ii<xd+10; ii++) {
   		if (!(tiles[jj])) {
   			tiles[jj] = [];
   		}
