@@ -96,6 +96,7 @@ function sortTiles(json) {
 	for (iii = 0; iii<json.length-1; iii++) {
 		x = Math.floor(json[iii].lon*d);
 		y = Math.floor(json[iii].lat*d);
+		alert("Lisätään suojatie tileen y:"+y+" x:"+x+"  tämä tile on: "+tiles[y][x]);
 		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});	
 	}
 	
