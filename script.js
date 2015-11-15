@@ -74,7 +74,7 @@ function loadSquares(x,y) {
   y = y/D;
   var x2 = x+0.01;
   var y2 = y+0.01;
-  
+  alert("alustettu'd");
   $.ajax({
 			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+y+","+x+","+y2+","+x2+");%20out%3B",
 			     dataType: 'json',
@@ -92,6 +92,7 @@ function loadSquares(x,y) {
 function sortTiles(json) {
 	// iterate over json objects
 	// convert crosswalk coordinates to indexes
+	alert("sortting");
 	var x;
 	var y;
 	for (iii = 0; iii<json.length; iii++) {
