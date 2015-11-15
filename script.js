@@ -93,6 +93,7 @@ function sortTiles(json) {
 	// convert crosswalk coordinates to indexes
 	var x;
 	var y;
+	alert("sortTiles, this is json:"+json);
 	for (iii = 0; iii<json.length; iii++) {
 		x = Math.floor(json[iii].lon/d);
 		y = Math.floor(json[iii].lat/d);
