@@ -80,13 +80,14 @@ function loadSquares(x,y) {
 			     dataType: 'json',
 			     success:function(json){
 			         	sortTiles(json.elements);
+			         	return 1;
 			        },
 			     error:function(){
 			         alert("Error");
 			         return 0;
 			     }      
 			});
-  return 1;
+
 }
 
 function sortTiles(json) {
