@@ -107,5 +107,5 @@ function calcDistance(posx,posy,x,y) {
 	var R = 6371000;
 	return ((posx-x).toRadians()*R)^2+((posy-y).toRadians()*R)^2;
 }
-var checker = setInterval(chekTiles(testgps),3000);
+var checker = setInterval(checkTiles(testgps),3000);
 setTimeout(clearTimeout(checker),10000);
