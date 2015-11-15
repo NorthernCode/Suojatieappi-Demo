@@ -40,6 +40,7 @@ function checkTiles(gps) {
       // apumuuttuja tekstille
       
       // testataan vielä, onko tyhjä vai onko lista
+      alert"Ruudun tila:"+tiles[j][i]);
       alert("paljonko suojateitä ruudussa"+j+","+i+"?   "+tiles[j][i].length);
       for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
