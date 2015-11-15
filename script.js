@@ -57,6 +57,7 @@ function loadSquares(x,y) {
   y = Math.floor(y*D);
   xd = x*10;
   yd = y*10;
+  alert("Aloitetaan tiles alustus alkuindeksit: y:"+yd+" x:"+xd);
   for (jj=yd; jj<yd+9; jj++) {
   	for (ii=xd; ii<xd+9; ii++) {
   		if (!(tiles[jj])) {
@@ -67,6 +68,7 @@ function loadSquares(x,y) {
   		}
   	}
   }
+  alert("Alustus päättynyt, indeksit: y"+jj+" x:"+ii);
   x = x/D;
   y = y/D;
   var x2 = x+0.1;
