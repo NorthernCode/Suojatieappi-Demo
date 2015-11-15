@@ -20,6 +20,7 @@ function checkTiles(gps) {
   var posy = gps.coords.latitude;
   var x = Math.floor(posx*d);
   var y = Math.floor(posy*d);
+  var t = "SUOJATIEDATAA:<br>";
   for (j = y-1; j < y+1; j++) {
     for (i = x-1; i < x+1; i++) {
       if (!(tiles[j])) {
@@ -37,7 +38,7 @@ function checkTiles(gps) {
       }
       // pikkuruudun data on alustettu
       // apumuuttuja tekstille
-      var t;
+      
       // testataan vielä, onko tyhjä vai onko lista
       for (k = 0; k < tiles[j][i].length; k++) {
       	alert("paljonko suojateitä ruudussa?   "+tiles[j][i].length);
@@ -96,7 +97,6 @@ function sortTiles(json) {
 	for (iii = 0; iii<json.length-1; iii++) {
 		x = Math.floor(json[iii].lon*d);
 		y = Math.floor(json[iii].lat*d);
-		alert("Lisätään suojatie tileen y:"+y+" x:"+x+"  tämä tile on: "+tiles[y][x]);
 		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});	
 	}
 	
