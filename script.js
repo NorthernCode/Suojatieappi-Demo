@@ -22,7 +22,7 @@ function checkTiles(gps) {
   for (j = y-1; j <= y+1; j++) {
     for (i = x-1; i <= x+1; i++) {
       if (!(tiles[j])) {
-      	alert("Ladataan squareja");
+      	//alert("Ladataan squareja");
         // ladataan isosta ruudusta dataa
         if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
@@ -90,7 +90,7 @@ return 1;
 function sortTiles(json) {
 	// iterate over json objects
 	// convert crosswalk coordinates to indexes
-	alert("sortting");
+	//alert("sortting");
 	var x;
 	var y;
 	for (iii = 0; iii<json.length; iii++) {
