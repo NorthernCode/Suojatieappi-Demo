@@ -21,8 +21,8 @@ function checkTiles(gps) {
   var y = Math.floor(posy*d);
   var t = "";
   t += "SUOJATIEDATAA\n"
-  for (j = y-1; j < y+1; j++) {
-    for (i = x-1; i < x+1; i++) {
+  for (j = y-1; j <= y+1; j++) {
+    for (i = x-1; i <= x+1; i++) {
       if (!(tiles[j])) {
         // ladataan isosta ruudusta dataa
         if (!loadSquares(i/d,j/d)) {
@@ -41,7 +41,7 @@ function checkTiles(gps) {
       
       // testataan vielä, onko tyhjä vai onko lista
       alert("paljonko suojateitä ruudussa"+j+","+i+"?   "+tiles[j][i].length);
-      for (k = 0; k < tiles[j][i].length-1; k++) {
+      for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
           alert("OLET SUOJATIELLÄ");
         }
@@ -92,7 +92,7 @@ function sortTiles(json) {
 	// convert crosswalk coordinates to indexes
 	var x;
 	var y;
-	for (iii = 0; iii<json.length-1; iii++) {
+	for (iii = 0; iii<json.length; iii++) {
 		x = Math.floor(json[iii].lon*d);
 		y = Math.floor(json[iii].lat*d);
 		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});	
