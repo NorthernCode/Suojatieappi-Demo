@@ -78,7 +78,7 @@ function loadSquares(x,y) {
   $.ajax({
 			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+y+","+x+","+y2+","+x2+");%20out%3B",
 			     dataType: 'json',
-			     settings: {"async":false};
+			     settings: {"async":false},
 			     success:function(json){
 			         	sortTiles(json.elements);
 			        },
