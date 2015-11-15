@@ -13,7 +13,7 @@ var D = 100;
 var THRESHOLD = 100;
 
 // oma sijainti
-var mikkeligps = {"coords":{"latitude":61.68879,"longitude":27.27311}};
+var testgps = {"coords":{"latitude":60.18539,"longitude":24.82695}};
 
 function checkTiles(gps) {
   var posx = gps.coords.longitude;
