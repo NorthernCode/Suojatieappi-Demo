@@ -36,7 +36,6 @@ function checkTiles(gps) {
           return -1;
         }
       }
-      alert(tiles);
       // pikkuruudun data on alustettu
       // apumuuttuja tekstille
       
@@ -99,6 +98,7 @@ function sortTiles(json) {
 		y = Math.floor(json[iii].lat*d);
 		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});	
 	}
+	alert("sortTiles: "+tiles);
 	
 	
   
