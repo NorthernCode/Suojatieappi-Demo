@@ -1,5 +1,3 @@
-alert("moi");
-
 // pikkuruutulista = tiles
 // isoruutulista = squares
 
@@ -24,7 +22,7 @@ function checkTiles(gps) {
   for (j = y-1; j <= y+1; j++) {
     for (i = x-1; i <= x+1; i++) {
       if (!(tiles[j])) {
-      	alert("Ladataan sqaureja");
+      	alert("Ladataan squareja");
         // ladataan isosta ruudusta dataa
         if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
@@ -32,7 +30,7 @@ function checkTiles(gps) {
         }
       }
       else if (!(tiles[j][i])) {
-      	alert("Ladataan sqaureja 2");
+      	//alert("Ladataan squareja 2");
       	if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
           return -1;
@@ -42,7 +40,7 @@ function checkTiles(gps) {
       // apumuuttuja tekstille
       
       // testataan vielä, onko tyhjä vai onko lista
-      alert("Suojateitä tilessä "+j+", "+i+": "+tiles[j][i]);
+      //alert("Suojateitä tilessä "+j+", "+i+": "+tiles[j][i]);
       for (k = 0; k < tiles[j][i].length; k++) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
           alert("OLET SUOJATIELLÄ");
@@ -74,11 +72,10 @@ function loadSquares(x,y) {
   y = y/D;
   var x2 = x+0.01;
   var y2 = y+0.01;
-  alert("alustettu'd");
+  //alert("alustettu'd");
   $.ajax({
 			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+y+","+x+","+y2+","+x2+");%20out%3B",
 			     dataType: 'json',
-			     settings: {"async":false},
 			     success:function(json){
 			         	sortTiles(json.elements);
 			        },
@@ -112,3 +109,4 @@ function calcDistance(posx,posy,x,y) {
 }
 
 checkTiles(testgps);
+setTimeout(checkTiles(testgps),2000)
