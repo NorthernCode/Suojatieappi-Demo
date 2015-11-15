@@ -36,6 +36,7 @@ function checkTiles(gps) {
           return -1;
         }
       }
+      alert(tiles);
       // pikkuruudun data on alustettu
       // apumuuttuja tekstille
       
