@@ -24,6 +24,7 @@ function checkTiles(gps) {
   for (j = y-1; j <= y+1; j++) {
     for (i = x-1; i <= x+1; i++) {
       if (!(tiles[j])) {
+      	alert("Ladataan sqaureja");
         // ladataan isosta ruudusta dataa
         if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
@@ -31,6 +32,7 @@ function checkTiles(gps) {
         }
       }
       else if (!(tiles[j][i])) {
+      	alert("Ladataan sqaureja 2");
       	if (!loadSquares(i/d,j/d)) {
           alert("EI PYSTYTTY LATAAMAAN TIETOA");
           return -1;
@@ -96,7 +98,6 @@ function sortTiles(json) {
 		x = Math.floor(json[iii].lon*d);
 		y = Math.floor(json[iii].lat*d);
 		tiles[y][x].push({"x":json[iii].lon,"y":json[iii].lat});
-		alert("LIsättiin suojatie: "+y+","+x+"   "+tiles[y][x]);
 	}
 	
 	
