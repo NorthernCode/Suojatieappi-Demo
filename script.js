@@ -2,6 +2,7 @@
 // isoruutulista = squares
 
 var tiles = [];
+var squares = [];
 
 // pikkuruutujen skaala d, isot D, pitää olla 10^a
 var d = 1000;
@@ -49,9 +50,10 @@ function checkTiles(gps) {
         }
         t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(3)+"\n";
       }
-      $("#sandbox").text(t)
+      
     }
   }
+  $("#sandbox").text(t);
 }
 
 function loadSquares(x,y) {
@@ -75,17 +77,23 @@ function loadSquares(x,y) {
   var x2 = x+0.01;
   var y2 = y+0.01;
   //alert("alustettu'd");
-  $.ajax({
-			     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+y+","+x+","+y2+","+x2+");%20out%3B",
-			     dataType: 'json',
-			     success:function(json){
-			         	sortTiles(json.elements);
-			        },
-			     error:function(){
-			         alert("Error");
-			         return 0;
-			     }      
-			});
+  if (!(squares[y])) {
+  	squares[y] = [];
+  	if (!(squares[y][x])) {
+	  	$.ajax({
+				     url:"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22]("+y+","+x+","+y2+","+x2+");%20out%3B",
+				     dataType: 'json',
+				     success:function(json){
+				         	sortTiles(json.elements);
+				        },
+				     error:function(){
+				         alert("Error");
+				         return 0;
+				     }      
+				});
+		squares[y][x] = 1;
+  	}
+  }
 return 1;
 }
 
@@ -110,4 +118,3 @@ function calcDistance(posx,posy,x,y) {
 	return ((posx-x).toRadians()*R)^2+((posy-y).toRadians()*R)^2;
 }
 var checker = setInterval(checkTiles(testgps),3000);
-setTimeout(clearTimeout(checker),10000);
