@@ -46,7 +46,6 @@ function checkTiles(gps) {
       // testataan vielä, onko tyhjä vai onko lista
       //alert("Suojateitä tilessä "+j+", "+i+": "+tiles[j][i]);
       for (k = 0; k < tiles[j][i].length; k++) {
-      	alert("MITÄ TÄSSÄ TILESSÄ ON? x:"+i+" y:"+j+"   "+JSON.stringify(tiles[j][i][k]));
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
          //alert("OLET SUOJATIELLÄ"); // VAIHDA TÄMÄ
         }
@@ -119,6 +118,5 @@ function calcDistance(posx,posy,x,y) {
 	var R = 6371000;
 	return Math.pow(Math.PI*(posx-x)*R/180,2)+Math.pow(Math.PI*(posy-y)*R/180,2);
 }
-alert("distancetester: vastaus pitäisi olla 10 metriä:"+Math.sqrt(calcDistance(0.001,0,0.002,0)));
 var checker = setInterval(function() {checkTiles(testgps)},3000);
 setTimeout(function() {clearTimeout(checker)},7000);
