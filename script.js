@@ -119,4 +119,6 @@ function calcDistance(posx,posy,x,y) {
 	var R = 6371000;
 	return (Math.PI*(posx-x)*R/180)^2+(Math.PI*(posy-y)*R/180)^2;
 }
-setInterval(function() {checkTiles(testgps)},3000);
+calcDistance(testgps.coords.lon,testgps.coords.lat,testgps.coords.lon+0.01,testgps.coords.lat+0.01);
+var checker = setInterval(function() {checkTiles(testgps)},3000);
+setTimeout(function() {clearTimeout(checker)},7000);
