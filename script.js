@@ -13,8 +13,8 @@ var t = "";
 // kynnysetäisyys
 var THRESHOLD = 100;
 
-// oma sijainti
-var testgps = {"coords":{"latitude":60.18515,"longitude":24.82585}};
+// oma sijainti  60.18884, 24.83487 (SMT RISTEYS)
+var testgps = {"coords":{"latitude":60.18884,"longitude":24.83487}};
 function checkTiles(gps) {
 	counter++;
   var posx = gps.coords.longitude;
@@ -50,7 +50,7 @@ function checkTiles(gps) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
          //alert("OLET SUOJATIELLÄ"); // VAIHDA TÄMÄ
         }
-        t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(3)+"\n";
+        t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(1)+"\n";
       }
       
     }
