@@ -119,5 +119,6 @@ function calcDistance(posx,posy,x,y) {
 	var R = 6371000;
 	return Math.pow(Math.PI*(posx-x)*R/180,2)+Math.pow(Math.PI*(posy-y)*R/180,2);
 }
+alert("distancetester: vastaus pitäisi olla 10 metriä:"+Math.sqrt(calcDistance(0.001,0,0.002,0)));
 var checker = setInterval(function() {checkTiles(testgps)},3000);
 setTimeout(function() {clearTimeout(checker)},7000);
