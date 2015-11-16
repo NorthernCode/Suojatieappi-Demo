@@ -117,6 +117,7 @@ function sortTiles(json) {
 
 function calcDistance(posx,posy,x,y) {
 	var R = 6371000;
+	alert("testihommia:"+(posx-x)+"   "+(Math.PI*(posy-y)));
 	return (Math.PI*(posx-x)*R/180)^2+(Math.PI*(posy-y)*R/180)^2;
 }
 alert("testidistance: "+testgps.coords.latitude+"  "+testgps.coords.longitude+0.002+"   "+calcDistance(testgps.coords.longitude,testgps.coords.latitude,testgps.coords.longitude+0.002,testgps.coords.latitude+0.001));
