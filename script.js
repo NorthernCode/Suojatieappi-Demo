@@ -116,6 +116,6 @@ function sortTiles(json) {
 
 function calcDistance(posx,posy,x,y) {
 	var R = 6371000;
-	return (pi()*(posx-x)*R/180)^2+(pi()*(posy-y)*R/180)^2;
+	return (Math.PI*(posx-x)*R/180)^2+(Math.PI*(posy-y)*R/180)^2;
 }
 setInterval(function() {checkTiles(testgps)},3000);
