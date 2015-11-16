@@ -46,8 +46,9 @@ function checkTiles(gps) {
       // testataan vielä, onko tyhjä vai onko lista
       //alert("Suojateitä tilessä "+j+", "+i+": "+tiles[j][i]);
       for (k = 0; k < tiles[j][i].length; k++) {
+      	alert("MITÄ TÄSSÄ TILESSÄ ON? x:"+i+" y:"+j+"   "+tiles[j][i][k]);
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
-          alert("OLET SUOJATIELLÄ");
+          alert("OLET SUOJATIELLÄ"); // VAIHDA TÄMÄ
         }
         t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(3)+"\n";
       }
