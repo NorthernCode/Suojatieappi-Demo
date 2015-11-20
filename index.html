@@ -2,12 +2,20 @@
 <head>
 	<script type="text/javascript" src="lib/jquery-1.11.3.min.js"></script>
 	<title>Suojatie - Demo</title>
+	<style>
+		.debug {
+			display: none;
+		}
+		body {
+			background-image: url('assets/bg.png');
+			background-repeat: no-repeat;
+		}
+	</style>
 </head>
 <body>
-        <div>Turvassa yli!</div>
-	<div id="gps"></div>
-	<div id="data"></div>
-	<div id="sandbox" style="border:solid;"></div>
+	<div id="gps" class="debug"></div>
+	<div id="data" class="debug"></div>
+	<div id="sandbox" style="border:solid;" class="debug"></div>
 	<script type="text/javascript">
 		var gpsEvents = [];
 		var gps;
