@@ -120,4 +120,4 @@ function calcDistance(posx,posy,x,y) {
 	return Math.pow(Math.PI*(posx-x)*R/180,2)+Math.pow(Math.PI*(posy-y)*R/180,2);
 }
 //var checker = setInterval(function() {checkTiles(testgps)},3000);
-setTimeout(function() {clearTimeout(checker)},7000);
+//setTimeout(function() {clearTimeout(checker)},7000);
