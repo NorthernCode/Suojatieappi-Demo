@@ -8,7 +8,6 @@ var squares = [];
 var d = 1000;
 var D = 100;
 var counter = 0;  
-var t = "";
 
 // kynnysetäisyys
 var THRESHOLD = 100;
@@ -21,6 +20,7 @@ function checkTiles(gps) {
   var posy = gps.coords.latitude;
   var x = Math.floor(posx*d);
   var y = Math.floor(posy*d);
+  var t = "";
 
   t += "SUOJATIEDATAA   "+counter+"\n";
   for (j = y-1; j <= y+1; j++) {
@@ -49,7 +49,7 @@ function checkTiles(gps) {
         if (calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y) < THRESHOLD) {
          //alert("OLET SUOJATIELLÄ"); // VAIHDA TÄMÄ
         }
-        t = t+"Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(1)+"\n";
+        t += "Suojatie etäisyydellä:"+Math.sqrt(calcDistance(posx,posy,tiles[j][i][k].x,tiles[j][i][k].y)).toFixed(1)+"\n";
       }
       
     }
