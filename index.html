@@ -23,7 +23,6 @@
 		function showPos(location){
 			gps = location;
 			$("#gps").text("Location:" + location.coords.latitude.toFixed(2) + "," +location.coords.longitude.toFixed(2));
-			getData();
 			checkTiles(gps);
 		}
 

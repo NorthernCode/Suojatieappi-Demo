@@ -13,8 +13,6 @@ var t = "";
 // kynnysetäisyys
 var THRESHOLD = 100;
 
-// oma sijainti  60.18890,24.83452 (SMT RISTEYS)
-var testgps = {"coords":{"latitude":60.18890,"longitude":24.83452}};
 function checkTiles(gps) {
 	counter++;
   var posx = gps.coords.longitude;
@@ -78,7 +76,7 @@ function loadSquares(x,y) {
   y = y/D;
   var x2 = x+0.01;
   var y2 = y+0.01;
-  //alert("alustettu'd");
+
   if (!(squares[y])) {
   	squares[y] = [];
   	if (!(squares[y][x])) {
