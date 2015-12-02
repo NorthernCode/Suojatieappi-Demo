@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"f",
+				"float"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"dia",
+				"display"
+			],
+			[
+				"de",
+				"debug"
+			],
+			[
+				"y",
+				"y"
+			],
+			[
+				"la",
+				"latestEvents"
+			],
+			[
+				"gp",
+				"gpsEvents"
+			],
+			[
 				"get",
 				"getData"
 			],
@@ -84,18 +120,37 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "script.js",
 			"settings":
 			{
-				"buffer_size": 1359,
+				"buffer_size": 2876,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/code/graffa/round2/src/basis/Subdiv.cpp",
+			"contents": "<html>\n<head>\n	<script type=\"text/javascript\" src=\"lib/jquery-1.11.3.min.js\"></script>\n	<title>Suojatie - Demo</title>\n	<style>\n		.debug {\n			display: none;\n		}\n		#bg {\n			width: 100%;\n			margin: auto;\n			position: fixed;\n		}\n		#sign {\n			width: 80%;\n			margin-left: auto;\n			margin-right: auto;\n			position: fixed;\n			left: 10%;\n			top: 20%;\n		}\n		#sign-container {\n			display: none;\n		}\n		body {\n			margin: 0; \n			padding: 0; \n		}\n	</style>\n</head>\n<body>\n	<img src=\"assets/bg.png\" id=\"bg\"></img>\n	<div id=\"sign-container\"><img src=\"assets/roadsign.png\" id=\"sign\"></img></div>\n	<div id=\"gps\" class=\"debug\"></div>\n	<div id=\"data\" class=\"debug\"></div>\n	<div id=\"sandbox\" style=\"border:solid;\" class=\"debug\"></div>\n	<script src=\"phonegap.js\"></script>\n	<script type=\"text/javascript\">\n		var gpsEvents = [];\n		var gps;\n		var zebraData;\n		function getGPS(){\n			if(navigator.geolocation){\n				var options = {timeout:60000, enableHighAccuracy:true};\n                navigator.geolocation.watchPosition(showPos, errorHandler, options);\n			}else{\n				alert(\"no gps\");\n			}\n		}\n		function showPos(location){\n			gps = location;\n			$(\"#gps\").text(\"Location:\" + location.coords.latitude.toFixed(2) + \",\" +location.coords.longitude.toFixed(2));\n			checkTiles(gps);\n		}\n\n		function errorHandler(err) {\n            if(err.code == 1) {\n               alert(\"Error: Access is denied!\");\n            }\n            \n            else if( err.code == 2) {\n               alert(\"Error: Position is unavailable!\");\n            }\n        }\n\n        function showData(data){\n        	zebraData = data;\n         	$( \"#data\" ).text( JSON.stringify(data, null, 2) );\n        }\n\n        function getData(){\n        	var gpsString = \"\" + gps.coords.latitude.toFixed(2) + \",\" + gps.coords.longitude.toFixed(2) + \",\" + (gps.coords.latitude + 0.01).toFixed(2) + \",\" + (gps.coords.longitude + 0.01).toFixed(2)\n			$.ajax({\n			     url:\"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22](\"+ gpsString + \");%20out%3B\",\n			     dataType: 'json',\n			     success:function(json){\n			         	showData(json);\n			        },\n			     error:function(){\n			         alert(\"Error\");\n			     }      \n			});\n        }\n        \n	getGPS();\n\n	function remote(view){\n		if (view) { $('#sign-container' ).css( \"display\", \"block\" ); }\n		else { $( '#sign-container' ).css( \"display\", \"none\" ); }\n	}\n\n	function checkRemote(){\n			$.ajax({\n			     url:\"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22](\"+ gpsString + \");%20out%3B\",\n			     dataType: 'json',\n			     success:function(json){\n			         	showData(json);\n			        },\n			     error:function(){\n			         alert(\"Error\");\n			     }      \n			});\n        }\n	</script>\n	<script type=\"text/javascript\" src=\"script.js\"></script>\n</body>\n</html>\n",
+			"file": "index.html",
+			"file_size": 3139,
+			"file_write_time": 130935288414587579,
 			"settings":
 			{
-				"buffer_size": 8570,
+				"buffer_size": 2833,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config.xml",
+			"settings":
+			{
+				"buffer_size": 557,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/xampp/htdocs/test.php",
+			"settings":
+			{
+				"buffer_size": 21,
 				"line_ending": "Windows"
 			}
 		}
@@ -124,6 +179,11 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Antti/Downloads/liikenneturva.svg",
+		"/C/Program Files/Adobe/Adobe Photoshop CS6 (64 Bit)/Plug-ins/NearestBase/NearestBase.8bc",
+		"/C/code/suojatie-app/script.js",
+		"/C/code/graffa/round2/src/basis/Subdiv.cpp",
+		"/C/code/suojatie-app/index.html",
 		"/C/code/suojatie-app/Uusi tekstiasiakirja.txt",
 		"/C/code/RFID/monitor/users.json",
 		"/C/code/RFID/monitor/server.js",
@@ -204,28 +264,30 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "script.js",
 					"settings":
 					{
-						"buffer_size": 1359,
+						"buffer_size": 2876,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								106,
-								106
+								737,
+								737
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -235,24 +297,77 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/C/code/graffa/round2/src/basis/Subdiv.cpp",
+					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 8570,
+						"buffer_size": 2833,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2411,
+								2411
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1090.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config.xml",
+					"settings":
+					{
+						"buffer_size": 557,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								547,
+								547
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/xampp/htdocs/test.php",
+					"settings":
+					{
+						"buffer_size": 21,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								21
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
