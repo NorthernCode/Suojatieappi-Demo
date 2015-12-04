@@ -91,9 +91,11 @@
 
 	function checkRemote(){
 		$.ajax({
-		     url:"http://169.254.76.226:90/remoteapi/status.php",
+		     url:"/remoteapi/status.php",
+		     dataType: 'json',
 		     success:function(data){
-		         	remote(data);
+		         	console.log("Success");
+		         	remote(data.status);
 		        },
 		     error:function(){
 		         console.log("Error with Remote connection");
@@ -101,7 +103,7 @@
 		});
     }
 
-    window.setInterval(checkRemote, 3000);
+    window.setInterval(checkRemote, 2000);
 	</script>
 	<script type="text/javascript" src="script.js"></script>
 </body>

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"fo",
+				"fopen"
+			],
+			[
 				"mar",
 				"margin-right"
 			],
@@ -136,13 +140,10 @@
 			}
 		},
 		{
-			"contents": "<?php\n\nif(isset($_REQUEST['status'])){\n	\n}",
-			"file": "/C/xampp/htdocs/remoteapi/remote.php",
-			"file_size": 0,
-			"file_write_time": 130935339428691410,
+			"file": "/C/xampp/htdocs/remoteapi/remote.html",
 			"settings":
 			{
-				"buffer_size": 42,
+				"buffer_size": 786,
 				"line_ending": "Windows"
 			}
 		},
@@ -150,7 +151,7 @@
 			"file": "/C/xampp/htdocs/remoteapi/status.php",
 			"settings":
 			{
-				"buffer_size": 16,
+				"buffer_size": 49,
 				"line_ending": "Windows"
 			}
 		},
@@ -195,6 +196,7 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/remoteapi/remote.php",
 		"/C/Users/Antti/Downloads/liikenneturva.svg",
 		"/C/Program Files/Adobe/Adobe Photoshop CS6 (64 Bit)/Plug-ins/NearestBase/NearestBase.8bc",
 		"/C/code/suojatie-app/script.js",
@@ -280,7 +282,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -323,8 +325,8 @@
 						"selection":
 						[
 							[
-								2667,
-								2667
+								86,
+								15
 							]
 						],
 						"settings":
@@ -333,30 +335,30 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1232.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/C/xampp/htdocs/remoteapi/remote.php",
+					"file": "/C/xampp/htdocs/remoteapi/remote.html",
 					"settings":
 					{
-						"buffer_size": 42,
+						"buffer_size": 786,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40,
-								40
+								209,
+								209
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -369,15 +371,15 @@
 					"file": "/C/xampp/htdocs/remoteapi/status.php",
 					"settings":
 					{
-						"buffer_size": 16,
+						"buffer_size": 49,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16,
-								16
+								48,
+								48
 							]
 						],
 						"settings":
