@@ -128,13 +128,29 @@
 			}
 		},
 		{
-			"contents": "<html>\n<head>\n	<script type=\"text/javascript\" src=\"lib/jquery-1.11.3.min.js\"></script>\n	<title>Suojatie - Demo</title>\n	<style>\n		.debug {\n			display: none;\n		}\n		#bg {\n			width: 100%;\n			margin: auto;\n			position: fixed;\n		}\n		#sign {\n			width: 80%;\n			margin-left: auto;\n			margin-right: auto;\n			position: fixed;\n			left: 10%;\n			top: 20%;\n		}\n		#sign-container {\n			display: none;\n		}\n		body {\n			margin: 0; \n			padding: 0; \n		}\n	</style>\n</head>\n<body>\n	<img src=\"assets/bg.png\" id=\"bg\"></img>\n	<div id=\"sign-container\"><img src=\"assets/roadsign.png\" id=\"sign\"></img></div>\n	<div id=\"gps\" class=\"debug\"></div>\n	<div id=\"data\" class=\"debug\"></div>\n	<div id=\"sandbox\" style=\"border:solid;\" class=\"debug\"></div>\n	<script src=\"phonegap.js\"></script>\n	<script type=\"text/javascript\">\n		var gpsEvents = [];\n		var gps;\n		var zebraData;\n		function getGPS(){\n			if(navigator.geolocation){\n				var options = {timeout:60000, enableHighAccuracy:true};\n                navigator.geolocation.watchPosition(showPos, errorHandler, options);\n			}else{\n				alert(\"no gps\");\n			}\n		}\n		function showPos(location){\n			gps = location;\n			$(\"#gps\").text(\"Location:\" + location.coords.latitude.toFixed(2) + \",\" +location.coords.longitude.toFixed(2));\n			checkTiles(gps);\n		}\n\n		function errorHandler(err) {\n            if(err.code == 1) {\n               alert(\"Error: Access is denied!\");\n            }\n            \n            else if( err.code == 2) {\n               alert(\"Error: Position is unavailable!\");\n            }\n        }\n\n        function showData(data){\n        	zebraData = data;\n         	$( \"#data\" ).text( JSON.stringify(data, null, 2) );\n        }\n\n        function getData(){\n        	var gpsString = \"\" + gps.coords.latitude.toFixed(2) + \",\" + gps.coords.longitude.toFixed(2) + \",\" + (gps.coords.latitude + 0.01).toFixed(2) + \",\" + (gps.coords.longitude + 0.01).toFixed(2)\n			$.ajax({\n			     url:\"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22](\"+ gpsString + \");%20out%3B\",\n			     dataType: 'json',\n			     success:function(json){\n			         	showData(json);\n			        },\n			     error:function(){\n			         alert(\"Error\");\n			     }      \n			});\n        }\n        \n	getGPS();\n\n	function remote(view){\n		if (view) { $('#sign-container' ).css( \"display\", \"block\" ); }\n		else { $( '#sign-container' ).css( \"display\", \"none\" ); }\n	}\n\n	function checkRemote(){\n			$.ajax({\n			     url:\"http://overpass-api.de/api/interpreter?data=[out:json];node%20[%22highway%22=%22crossing%22](\"+ gpsString + \");%20out%3B\",\n			     dataType: 'json',\n			     success:function(json){\n			         	showData(json);\n			        },\n			     error:function(){\n			         alert(\"Error\");\n			     }      \n			});\n        }\n	</script>\n	<script type=\"text/javascript\" src=\"script.js\"></script>\n</body>\n</html>\n",
 			"file": "index.html",
-			"file_size": 3139,
-			"file_write_time": 130935288414587579,
 			"settings":
 			{
-				"buffer_size": 2833,
+				"buffer_size": 2797,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n\nif(isset($_REQUEST['status'])){\n	\n}",
+			"file": "/C/xampp/htdocs/remoteapi/remote.php",
+			"file_size": 0,
+			"file_write_time": 130935339428691410,
+			"settings":
+			{
+				"buffer_size": 42,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/xampp/htdocs/remoteapi/status.php",
+			"settings":
+			{
+				"buffer_size": 16,
 				"line_ending": "Windows"
 			}
 		},
@@ -264,7 +280,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -279,8 +295,8 @@
 						"selection":
 						[
 							[
-								737,
-								737
+								863,
+								863
 							]
 						],
 						"settings":
@@ -300,29 +316,82 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 2833,
+						"buffer_size": 2797,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2411,
-								2411
+								2667,
+								2667
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1090.0,
+						"translation.y": 1232.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "/C/xampp/htdocs/remoteapi/remote.php",
+					"settings":
+					{
+						"buffer_size": 42,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/xampp/htdocs/remoteapi/status.php",
+					"settings":
+					{
+						"buffer_size": 16,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								16
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "config.xml",
 					"settings":
 					{
@@ -350,7 +419,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "/C/xampp/htdocs/test.php",
 					"settings":
 					{
